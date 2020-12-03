@@ -1,0 +1,55 @@
+<div class="container-fluid bg-1 h-100 mh-100">
+  <div class="row">
+
+    <div class="col-12 col-md-6">
+      <h3 class="text-center my-4 ">Wetter Suche:</h3>
+      <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
+        <div class="form-group">
+          <input
+          class="form-control"
+          type="text"
+          id="weatherLocation"
+          aria-describedby="weatherLocation"
+          placeholder="Orteingabe"
+          formControlName="location"
+          (keyup.enter)="sendToAPIXU(weatherSearchForm.value)"/>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-success btn-md">
+            Suche Wetter
+          </button>
+        </div>
+        <div class="text-center bild">
+          <img src="{{this.weatherData?.current.weather_icons[0]}}" alt="" />
+        </div>
+      </form>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <h3 class="text-center my-4">Wetter Informationen:
+        </h3>
+      <table class="table table-dark">
+        <tbody>
+        <tr>
+          <td>Aktuelle Wetterverhältnisse: </td>
+          <td>{{this.weatherData?.current.weather_descriptions[0]}}</td>
+        </tr>
+        <tr>
+          <td>Temperatur in Grad Celsius:  </td>
+          <td>{{this.weatherData?.current.temperature}}</td>
+        </tr>
+        <tr>
+          <td>Gefühlte Temperatur in Grad Celsius: </td>
+          <td>{{this.weatherData?.current.feelslike}}</td>
+        </tr>
+        <tr>
+          <td>Gesuchter Ort: </td>
+          <td>{{this.weatherData?.location.name}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+

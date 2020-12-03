@@ -1,0 +1,22 @@
+<!--Unsere Main Seite. Sie Verlinkt alle anderen Seiten.
+Die Headerseite wird immer aufgerufen -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/cover">
+    <img src="https://upload.wikimedia.org/wikipedia/de/1/1d/DHBW-Logo.svg" width="150" height="100"
+         alt="DHBWlogo"/>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" routerLink="/cover">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" routerLink="/aktie">Aktien</a>
+      <a class="nav-item nav-link" routerLink="/wetter">Wetter</a>
+      <a class="nav-item nav-link" routerLink="/wiki">Wikipedia</a>
+    </div>
+  </div>
+</nav>
+

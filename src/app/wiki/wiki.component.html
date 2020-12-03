@@ -1,0 +1,31 @@
+<div class="container-fluid bg-1 h-100 mh-100">
+  <div class="container-fluid">
+    <form class='form' [formGroup]="wikiSearchForm" (ngSubmit)="sendToAPIWiki(wikiSearchForm.value)">
+      <div class="form-group">
+        <input
+          class="form-control"
+          type="text"
+          id="wikiID"
+          aria-describedby="wikiID"
+          placeholder="Wikipedia Suche"
+          formControlName="wiki"
+          (keyup.enter)="sendToAPIWiki(wikiSearchForm.value)"/>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-success btn-md">
+          Suche Wikipediaartikel
+        </button>
+      </div>
+    </form>
+  </div>
+
+    <div class="text-center wiki ">
+      <h4>
+        {{this.wikiData?.title}}
+      </h4>
+
+      <p>
+        {{this.wikiData?.extract}}
+      </p>
+    </div>
+  </div>
