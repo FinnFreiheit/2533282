@@ -15,6 +15,10 @@ import { ChartComponent } from './chart/chart.component';
 import { ChartsModule } from 'ng2-charts';
 import { CoverComponent } from './cover/cover.component';
 import { WikiComponent } from './wiki/wiki.component';
+import { AppleComponent } from './aktien/apple/apple.component';
+import { GoogleComponent } from './aktien/google/google.component';
+import { FacebookComponent } from './aktien/facebook/facebook.component';
+
 
 
 @NgModule({
@@ -26,6 +30,9 @@ import { WikiComponent } from './wiki/wiki.component';
     ChartComponent,
     CoverComponent,
     WikiComponent,
+    AppleComponent,
+    GoogleComponent,
+    FacebookComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import {catchError} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class ApixuService {
   getAktie(aktie: string): Observable<string> {
     console.log('--> ' + aktie);
     const akturl = 'https://financialmodelingprep.com/api/v3/historical-price-full/' + aktie +
-      '?timeseries=365&apikey=7198997b60db96690929612786cfe7f2';
+      '?timeseries=365&apikey=7dba618fdaa322365dc7fcace2ccc913';
     console.log('--> ' + akturl);
     return this.http.get<string>(akturl);
   }
@@ -30,6 +31,12 @@ export class ApixuService {
     return this.http.get('https://cors-anywhere.herokuapp.com/https://de.wikipedia.org/w/api.php?action=query' +
       '&generator=prefixsearch&format=json&gpslimit=4&prop=extracts%7Cdescription&exintro' +
       '=1&explaintext=1&exsentences=3&redirects=1&gpssearch=' +
-      wiki);
+      wiki)
+      .pipe(
+        catchError((err) => {
+          console.log('Fehler in getWiki');
+          return throwError(err);
+        })
+      );
   }
 }

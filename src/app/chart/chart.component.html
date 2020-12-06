@@ -2,27 +2,31 @@
 
   <!--Einabe Formular -->
   <div class="container-fluid">
-  <form class='form' [formGroup]="aktieSearchForm" (ngSubmit)="sendToAPIAktie(aktieSearchForm.value)">
-    <div class="form-group">
-      <input
-        class="form-control"
-        type="text"
-        id="aktieID"
-        aria-describedby="aktieID"
-        placeholder="Aktieneingabe"
-        formControlName="aktie"
-        (keyup.enter)="sendToAPIAktie(aktieSearchForm.value)"/>
-    </div>
-    <div class="text-center">
-      <button type="submit" class="btn btn-success btn-md">
-        Suche Aktie
-      </button>
-    </div>
-  </form>
+    <form class='form' [formGroup]="aktieSearchForm" (ngSubmit)="sendToAPIAktie(aktieSearchForm.value)">
+      <div class="form-group">
+        <input
+          class="form-control"
+          type="text"
+          id="aktieID"
+          aria-describedby="aktieID"
+          placeholder="Aktieneingabe"
+          formControlName="aktie"
+          (keyup.enter)="sendToAPIAktie(aktieSearchForm.value)"/>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-success btn-md">
+          Suche Aktie
+        </button>
+      </div>
+    </form>
   </div>
 
   <!--Diagramm -->
-  <div style="display: block">
+  <div *ngIf="aktienData" style="display: block">
+    <div *ngIf="errorMessage==='Fehler'; else elseBlock" class="alert alert-danger">
+      <strong>Fehler!</strong> Die gesuchte Aktie konnte nicht gefunden werden.
+    </div>
+    <ng-template #elseBlock>
     <canvas baseChart
             [datasets]="chartData"
             [labels]="chartLabels"
@@ -30,5 +34,25 @@
             [legend]="chartLegend"
             [chartType]="chartType">
     </canvas>
+    </ng-template>
   </div>
+
+  <div class="container-fluid">
+    <!-- Aktien Kacheln -->
+    <div class="row">
+      <!-- Erste Kachel -->
+      <div class="col-md-6">
+        <app-apple></app-apple>
+      </div>
+      <!-- Zweite Kachel -->
+      <div class="col-md-6">
+        <app-facebook></app-facebook>
+      </div>
+      <!-- dritte Kachel-->
+      <div class="col-md-6">
+        <app-google></app-google>
+      </div>
+    </div>
+  </div>
+
 </div>

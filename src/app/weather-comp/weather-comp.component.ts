@@ -13,6 +13,7 @@ export class WeatherCompComponent implements OnInit {
   public weatherData: any;
   public lat: any;
   public lng: any;
+  errorMessage = 'ok';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -52,9 +53,9 @@ export class WeatherCompComponent implements OnInit {
     this.apixuService
       .getWeather(formValues.location)
       .subscribe((data: any) => {
-        console.log(formValues);
-        this.weatherData = data;
-        console.log(this.weatherData);
+          console.log(formValues);
+          this.weatherData = data;
+          console.log(this.weatherData);
       });
   }
 }

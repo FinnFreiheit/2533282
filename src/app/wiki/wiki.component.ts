@@ -11,6 +11,7 @@ import {ApixuService} from '../apixu.service';
 export class WikiComponent implements OnInit {
   wikiSearchForm!: FormGroup;
   public wikiData: any;
+  errorMessage = 'ok';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,12 +29,20 @@ export class WikiComponent implements OnInit {
     this.apiuxService
       .getWiki(formValues.wiki)
       .subscribe((data: any) => {
-        const keys = Object.keys(data.query.pages);
-        // console.log(keys);
-        const firstProperty = JSON.parse(keys[0]);
-        // console.log(firstProperty);
-        this.wikiData = data.query.pages[firstProperty];
-        console.log(this.wikiData);
+        if (typeof (data.query) === 'undefined') {
+          console.log('Fehler Log');
+          this.errorMessage = 'Fehler';
+        } else {
+          this.errorMessage = 'ok';
+          const keys = Object.keys(data.query.pages);
+          // console.log(keys);
+          const firstProperty = JSON.parse(keys[0]);
+          // console.log(firstProperty);
+          this.wikiData = data.query.pages[firstProperty];
+          console.log(this.wikiData);
+        }
+      }, (err: string) => {
+        console.log('error' + err);
       });
   }
 }
