@@ -61,7 +61,7 @@ Projekte einen globalen `errorHandler` implemetieren.
 
 
 
-## Wikipedia API
+## Wikipedia 
 Einen kurzen Artikel über das gesuchte Schlagwort in der Wikipediakomponente erhalte ich
 über die Wikipedia API `de.wikipedia.org`. Die Abfrage muss über einem Proxy 
 stattfinden. Dafür verwende ich `cors-anywhere.herokuapp.com`. 
@@ -69,7 +69,14 @@ Die Wikipedia Startseite sieht folgendermaßen aus.
 
 ![WikiStart][wikiStart]
 
-Nach eingabe einer 
+Nach eingabe eines Schlagwortes, wird eine Kurze Erklärung und der Titel auf der Seite angezeigt.
+
+![WikiSuche][wikiSuche]
+
+Bei einer Fehlerhaften eingabe erfolgt ein Warnhinweis und er benutzer kann die Eingabe überarbeiten. 
+
+![WikiFehler][wikiFehler]
+
 
 ## Erfahrungsbericht
 Die Internet seite ist mein erstes Angular Projekt. Der Einstieg in Angular viel am
@@ -87,3 +94,5 @@ Ich würde meine nächste Seite erneut mit Angular erstellen.
 [aktienFehler]:img/aktienFehler.png " Aktien Fehler"
 [aktienGross]:img/aktienStandartGroß.png
 [wikiStart]:img/wiki.png
+[wikiSuche]:img/wikiSuche.png
+[wikiFehler]:img/wikiFehler.png
