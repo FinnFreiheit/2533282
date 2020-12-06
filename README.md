@@ -107,6 +107,11 @@ Die Strukturierung der Internetseite in viele einzel Komponenten, hat die Arbeit
 erleichtert. Man behält leichter überblick und die Datein bleiben überschaubar. 
 Ich würde meine nächste Seite erneut mit Angular erstellen. 
 
+## Flussdiagramm
+Das Flussdiagramm ist unter Flussdiagramm.png gespeichert. 
+
+![Flussdiagramm][flussdiagramm]
+
 [Wetter Startseite]:img/wetter.png  "Wetter Startseite"
 [WetterSuche]:img/wetterSuche.png "Wetter Suche"
 [WetterFehler]:img/wetterFehler.png "Wetter Fehler"
@@ -117,3 +122,4 @@ Ich würde meine nächste Seite erneut mit Angular erstellen.
 [wikiStart]:img/wiki.png
 [wikiSuche]:img/wikiSuche.png
 [wikiFehler]:img/wikiFehler.png
+[flussdiagramm]:Flussdiagramm.png
