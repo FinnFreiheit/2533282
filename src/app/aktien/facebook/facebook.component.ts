@@ -31,6 +31,11 @@ export class FacebookComponent implements OnInit {
       xAxes: [{
         gridLines: {display: false},
         display: true,
+        ticks: {
+          callback: (dataLabel: any, index: number) => {
+            // Hide the label of every 2nd dataset. return null to hide the grid line too
+            return index % 4 === 0 ? dataLabel : '';
+          }},
         scaleLabel: {
           display: true,
           labelString: 'Datum'

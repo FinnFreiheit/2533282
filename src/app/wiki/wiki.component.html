@@ -19,18 +19,20 @@
     </form>
   </div>
 
-  <div *ngIf="errorMessage==='Fehler'" class="alert alert-danger">
+  <div *ngIf="errorMessage==='Fehler';else elseBlock" class="alert alert-danger">
     <strong>Fehler!</strong>
-    <p> dieser Ort konnte nicht gefunden werden</p>
+    <p> Suchanfrage konnte nicht beantwortet werden</p>
   </div>
 
-  <div class="text-center wiki ">
-    <h4>
-      {{this.wikiData?.title}}
-    </h4>
+  <ng-template #elseBlock>
+    <div class="text-center wiki ">
+      <h4>
+        {{this.wikiData?.title}}
+      </h4>
 
-    <p>
-      {{this.wikiData?.extract}}
-    </p>
-  </div>
+      <p>
+        {{this.wikiData?.extract}}
+      </p>
+    </div>
+  </ng-template>
 </div>

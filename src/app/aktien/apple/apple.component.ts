@@ -27,7 +27,7 @@ export class AppleComponent implements OnInit {
     responsive: true,
     title: {
       display: true,
-      text: 'APPLE'
+      text: 'Apple'
     },
     scales: {
       xAxes: [{
