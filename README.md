@@ -71,11 +71,11 @@ Durch Klicken auf einen der drei Charts, wird der Chart auf maximaler Fenstergr�
 Nach erfolgreicher eingabe eines Aktienkürzels wird der Kursverlauf des letzten Jahres angezeigt. Die Implementierung von Chart.js 
 in Angular war mit Herausforderungen verbunden. Die Dokumentation ist nicht sehr detailliert, und bezog sich so gut wie immer auf `JavaScript`.
 Die Charteinstellungen wurden in `JSON-Objekten` vorgenommen, jedoch war nicht auf anhieb klar welche ` Key-Value-Paare` angepasst werden müssen.
-Angepasst wurden die Farbe der Charts, Messpunkte und Gitter wurden entfernt und die Labels wurden reduziert. 
+Angepasst wurden in diesem Projekt die Farbe der Charts, Messpunkte und Gitter wurden entfernt und die Labels wurden reduziert. 
 
 ![AktienSuche][aktienSuche]
 
-Die Chart Komponente beinhaltet auch eine Fehlerbehebung. Die Umsetzung der Fehlerbehebung ist ausreichend, jedoch würde ich für folgende 
+Die Chart Komponente beinhaltet auch eine Fehlerbehandlung. Die Umsetzung der Fehlerbehandlung ist ausreichend, jedoch würde ich für folgende 
 Projekte einen globalen `errorHandler` implemetieren. 
 
 ![AktienFehler][aktienFehler]
@@ -83,7 +83,7 @@ Projekte einen globalen `errorHandler` implemetieren.
 
 
 ## Wikipedia 
-Einen kurzen Artikel über das gesuchte Schlagwort in der Wikipediakomponente erhalte ich
+Einen kurzen Artikel über das gesuchte Schlagwort in der Wikipediakomponente erhält man,
 über die Wikipedia API `de.wikipedia.org`. Die Abfrage muss über einem Proxy 
 stattfinden. Dafür verwende ich `cors-anywhere.herokuapp.com`. 
 Die Wikipedia Startseite sieht folgendermaßen aus. 
@@ -94,16 +94,16 @@ Nach eingabe eines Schlagwortes, wird eine Kurze Erklärung und der Titel auf de
 
 ![WikiSuche][wikiSuche]
 
-Bei einer Fehlerhaften eingabe erfolgt ein Warnhinweis und er benutzer kann die Eingabe überarbeiten. 
+Bei einer Fehlerhaften eingabe erfolgt ein Warnhinweis und der benutzer kann die Eingabe überarbeiten. 
 
 ![WikiFehler][wikiFehler]
 
 
 ## Erfahrungsbericht
-Die Internet seite ist mein erstes Angular Projekt. Der Einstieg in Angular viel am
+Die Internetseite ist mein erstes Angular Projekt. Der Einstieg in Angular viel am
 Anfang schwer. Das Framework wird regelmäßig aktualisiert, somit sind viele Quellen aus dem
-Internett veraltet, das erschwert die Fehlersuche. 
-Die Strukturierung der Internetseite in viele einzel Komponenten, hat die Arbeit 
+Internet veraltet, dadruch wird die Fehlersuche erschwert. 
+Die Strukturierung der Internetseite in viele einzelne Komponenten, hat die Arbeit 
 erleichtert. Man behält leichter überblick und die Datein bleiben überschaubar. 
 Ich würde meine nächste Seite erneut mit Angular erstellen. 
 
